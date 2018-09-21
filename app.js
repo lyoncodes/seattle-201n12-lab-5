@@ -9,8 +9,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-    var answer = a + b;
-    return answer; 
+    var output = [(a + b), "The sum of 4 and 7 is 11."];
+    return output
 };
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
@@ -26,10 +26,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-    var answer = a * b;
-    return answer;
 };
-console.log(answer);
+
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
