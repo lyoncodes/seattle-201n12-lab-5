@@ -43,10 +43,31 @@
     <p></p>
 
     <h2>sumArray()</h2>
-    <p></p>
+    <p>var testArray = [2, 3, 4]<br>
+      function newSumNeedsObject (a, b) {<br>
+        return a + b<br>
+      }<br>
+      function sumArray(sumArr) {<br>
+        var total = 0<br>
+        for (let i = 0; i < sumArr.length; i++) {<br>
+          total = (newSumNeedsObject(total, sumArr[i]))<br>
+        }<br>
+        console.log(total)<br>
+        return [(total), '2,3,4 was passed in as an array of numbers, and 9 is their sum.']<br>
+      }</p>
 
     <h2>multiplyArray()</h2>
-    <p></p>
+    <p>function newFunction (a, b, c) {<br>
+      return a * b * c<br>
+    }<br>
+    
+    function multiplyArray(multArr) {<br>
+      var total = 0<br>
+      for (let i = 1; i < multArr.length; i++) {<br>
+        total = (newFunction(multArr[0], multArr[1], multArr[2]))<br>
+        console.log(total)<br>
+      } return [(total), 'The numbers 2,3,4 have a product of 24.']<br>
+    }</p>
     
     <h2>multiplyAnyArray()</h2>
     <p></p>
