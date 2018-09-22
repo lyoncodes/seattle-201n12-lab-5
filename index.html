@@ -10,7 +10,6 @@
 
     <h2>sum(a, b)</h2>
 
-
     <p>4 + 7 = 11; <br>
       function sum(a, b) { <br>
         var output = [(a + b), "The sum of 4 and 7 is 11."];<br>
@@ -25,8 +24,21 @@
         return output<br>
         };</p>
 
-
-    <h2>sumAndMultiply()</h2>
+    <h2>sumAndMultiply(a, b, c) {</h2>
+      <p>
+      var third = {<br>
+        sum: function(a, b, c){<br>
+        return (a + b + c)<br>
+        },<br>
+        multiply: function(a, b, c){<br>
+        return (a * b * c)<br>
+        },<br>
+      };<br>
+        function sumAndMultiply(a, b, c) {<br>
+            return [(third.sum(a, b, c)), (third.multiply(a, b, c)), "4 and 7 and 5 sum to 16.", "The product of 4 and 7 and 5 is 140."]<br>
+        };<br>
+      </p>
+    
 
     <p></p>
 
