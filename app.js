@@ -9,34 +9,15 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes. */
 
 // Write your code here
-function Operator(a, b, c) {
-  this.a = a;
-  this.b = b;
-  this.c = c;
-  this.Sum = function (a, b) {
-    return (this.a + this.b)
-  }
-  this.Multiply = function (a, b) {
-    return (this.a * this.b)
-  }
-  this.sumThird = function (a, b, c) {
-    return (a + b + c)
-  }
- 
-  this.multiplyThird = function (a, b, c) {
-    return (a * b * c)
-  }
-}
-
 function sum (a, b) {
-  var add = a + b
-  return [ (add), 'The sum of 4 and 7 is 11.' ]
+  var total = (a + b)
+  return [(total), 'The sum of ' + a + ' and ' + b + ' is ' + total + '.']
 }
 testSum(4, 7)
 
 function multiply (a, b) {
-  var output = [(a * b), 'The product of 5 and 9 is 45.']
-  return output
+  var product = (a * b)
+  return [(product), 'The product of ' + a + ' and ' + b + ' is ' + product + '.']
 }
 testMultiply(5,9)
 
@@ -55,16 +36,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 
-var sumThird = function (a, b, c) {
-  return (a + b + c)
-}
+// var sumThird = function (a, b, c) {
+//   return (a + b + c)
+// }
 
-var multiplyThird = function (a, b, c) {
-  return (a * b * c)
-}
+// var multiplyThird = function (a, b, c) {
+//   return (a * b * c)
+// }
 
 function sumAndMultiply (a, b, c) {
-  return [(sumThird(a, b, c)), (multiplyThird(a, b, c)), '4 and 7 and 5 sum to 16.', 'The product of 4 and 7 and 5 is 140.']
+  var sums = (sum(a, (sum(b, c)[0]))[0])
+  var products = (multiply(a, (multiply(b, c)[0]))[0])
+  return [(sums), (products), '' + a + ' and ' + b + ' and ' + c + ' sum to 16.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is 140.']
 };
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5)
@@ -81,16 +64,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 var testArray = [2, 3, 4]
-function newSumNeedsObject (a, b) {
-  return a + b
-}
 function sumArray(sumArr) {
   var total = 0
   for (let i = 0; i < sumArr.length; i++) {
-    total = (newSumNeedsObject(total, sumArr[i]))
+    total = (sum(total, sumArr[i])[0])
   }
-  console.log(total)
-  return [(total), '2,3,4 was passed in as an array of numbers, and 9 is their sum.']
+  return [(total), '' + sumArr + ' was passed in as an array of numbers, and ' + total + ' is their sum.']
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -110,17 +89,16 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes. */
 
 // Write your code here
-function newFunction (a, b, c) {
-  return a * b * c
-}
+// function newFunction (a, b, c) {
+//   return a * b * c
+// }
 
 function multiplyArray(multArr) {
-  var total = 0
-  for (let i = 1; i < multArr.length; i++) {
-    total = (newFunction(multArr[0], multArr[1], multArr[2]))
-    console.log(total)
-  } return [(total), 'The numbers 2,3,4 have a product of 24.']
+  var total = (multiply(multArr[0], (multiply(multArr[1], multArr[2])[0]))[0])
+  console.log(total)
+  return [(total), 'The numbers ' + multArr + ' have a product of ' + total + '.']
 }
+
 // Here is the test for multiplyArray(); uncomment it to run it
 
 testMultiplyArray(testArray);
