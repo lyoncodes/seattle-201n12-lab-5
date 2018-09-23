@@ -11,22 +11,21 @@
     <h2>sum(a, b)</h2>
 
     <p>4 + 7 = 11; <br>
-      function sum(a, b) { <br>
-        var output = [(a + b), "The sum of 4 and 7 is 11."];<br>
-        return output<br>
+      function sum (a, b) {
+        var total = (a + b)
+        return [(total), 'The sum of ' + a + ' and ' + b + ' is ' + total + '.']
       }</p>
 
     <h2>multiply(a, b)</h2>
 
     <p>5 * 9 = 45;<br>
-      function multiply(a, b) {<br>
-        var output = [(a * b), "The product of 5 and 9 is 45."];<br>
-        return output<br>
-        };</p>
+      function multiply (a, b) {<br>
+        var product = (a * b)<br>
+        return [(product), 'The product of ' + a + ' and ' + b + ' is ' + product + '.']<br>
+      }<br>
 
     <h2>sumAndMultiply(a, b, c) {</h2>
-      <p>
-      var third = {<br>
+     <p>var third = {<br>
         sum: function(a, b, c){<br>
         return (a + b + c)<br>
         },<br>
@@ -38,36 +37,29 @@
             return [(third.sum(a, b, c)), (third.multiply(a, b, c)), "4 and 7 and 5 sum to 16.", "The product of 4 and 7 and 5 is 140."]<br>
         };<br>
       </p>
-    
 
-    <p></p>
-
-    <h2>sumArray()</h2>
-    <p>var testArray = [2, 3, 4]<br>
-      function newSumNeedsObject (a, b) {<br>
-        return a + b<br>
-      }<br>
-      function sumArray(sumArr) {<br>
-        var total = 0<br>
-        for (let i = 0; i < sumArr.length; i++) {<br>
-          total = (newSumNeedsObject(total, sumArr[i]))<br>
-        }<br>
-        console.log(total)<br>
-        return [(total), '2,3,4 was passed in as an array of numbers, and 9 is their sum.']<br>
-      }</p>
-
-    <h2>multiplyArray()</h2>
-    <p>function newFunction (a, b, c) {<br>
-      return a * b * c<br>
-    }<br>
-    
-    function multiplyArray(multArr) {<br>
+    <h2>sumArray()</h2><br>
+    <p><br>
+    var testArray = [2, 3, 4]<br>
+    function sumArray(sumArr) {<br>
       var total = 0<br>
-      for (let i = 1; i < multArr.length; i++) {<br>
-        total = (newFunction(multArr[0], multArr[1], multArr[2]))<br>
-        console.log(total)<br>
-      } return [(total), 'The numbers 2,3,4 have a product of 24.']<br>
-    }</p>
+      for (let i = 0; i < sumArr.length; i++) {<br>
+      total = (sum(total, sumArr[i])[0])<br>
+    }<br>
+      return [(total), '' + sumArr + ' was passed in as an array of numbers, and ' + total + ' is their sum.']<br>
+    }<br>
+
+    </p>
+
+    <h2>multiplyArray()</h2><br>
+
+    function multiplyArray(multArr) {<br>
+      var total = (multiply(multArr[0], (multiply(multArr[1], multArr[2])[0]))[0])<br>
+      console.log(total)<br>
+      return [(total), 'The numbers ' + multArr + ' have a product of ' + total + '.']<br>
+    }
+
+    </p>
     
     <h2>multiplyAnyArray()</h2>
     <p></p>
